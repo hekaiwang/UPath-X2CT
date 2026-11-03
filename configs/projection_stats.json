@@ -1,0 +1,21 @@
+{
+  "definition_split": "train",
+  "protocol_id": "UPATH-LIDC-v1.0",
+  "transform": "log1p(max(drr, 0)), then fixed train mean/std and clip [-6,6]",
+  "views": {
+    "frontal_ap": {
+      "log1p_max": 4.9598476070308815,
+      "log1p_mean": 2.943179491867308,
+      "log1p_min": 0.0,
+      "log1p_std": 1.7367166660257778,
+      "pixels": 216006656
+    },
+    "left_lateral": {
+      "log1p_max": 5.261537684104783,
+      "log1p_mean": 2.5296151462549665,
+      "log1p_min": 0.0,
+      "log1p_std": 2.019691174843826,
+      "pixels": 216006656
+    }
+  }
+}

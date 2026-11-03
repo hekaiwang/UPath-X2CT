@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "repo_id": "wanghekai/UPath-X2CT",
+  "revision": "d41e6e2c44355353fe912fa5573173c528411691",
+  "selection": "validation-selected diffusion step 22000; paired frozen coarse and normalized autoencoder",
+  "files": {
+    "autoencoder.pt": {
+      "sha256": "848a0e564c91e86b126dbb2530c8a305f75d4bb9d41a7e1ce6855e89b694d0e8",
+      "bytes": 84043530
+    },
+    "coarse.pt": {
+      "sha256": "c8b54ac36eb39466b2121790b6644fec4ed1f9954f262ce5196cfac8bc17bf22",
+      "bytes": 269640255
+    },
+    "diffusion.pt": {
+      "sha256": "fb0ce1141304323ed2b2097716a71e862ce3b32db1cac8abcf7b4ab2f46134c1",
+      "bytes": 402224186
+    },
+    "projection_stats.json": {
+      "sha256": "2ff84e460c61c534ca2d7a645895cc2f92f049c9d2a8859f4656db71161b23a7",
+      "bytes": 555
+    },
+    "projector_calibration.json": {
+      "sha256": "2654ed7b351402bcdb77165f96896cb321dc873d562d1bac0050229480cbb28e",
+      "bytes": 1458
+    }
+  },
+  "source_checkpoints": {
+    "autoencoder.pt": {
+      "sha256": "415cd5ef2727faab5c1401f31348db25e5f31a62537a970935dae7220f6f276b",
+      "step": null,
+      "ema_materialized": true,
+      "tensors": 132,
+      "step_note": "Normalized frozen wrapper does not retain the original training step."
+    },
+    "coarse.pt": {
+      "sha256": "b3203028e8c6332d030c2f3f1699fa12fe57571b108ca65f08740d1233848ac9",
+      "step": 20000,
+      "ema_materialized": true,
+      "tensors": 357
+    },
+    "diffusion.pt": {
+      "sha256": "e1d67855e3a53bf5ec0a0cefa2779b31e873196521c21367b68e7b1b3ae75ae4",
+      "step": 22000,
+      "ema_materialized": true,
+      "tensors": 357
+    }
+  },
+  "downloads": {
+    "chunks/autoencoder.pt.part000": {
+      "sha256": "76dd1a09453996cee6e65e45ada483f762fc9e501ea344d32020547fe2cebb98",
+      "bytes": 16777216
+    },
+    "chunks/autoencoder.pt.part001": {
+      "sha256": "91a328afdf99e1f3b78083d0d297c4ee4427b4d540e5f7262ff519179b807968",
+      "bytes": 16777216
+    },
+    "chunks/autoencoder.pt.part002": {
+      "sha256": "c91a27f915ee6d61ff3ec5d3ae66d8642a2c19c0ef19c5f15f5fa5b1310aa454",
+      "bytes": 16777216
+    },
+    "chunks/autoencoder.pt.part003": {
+      "sha256": "0f6cb8c70e9c1907b6776b1779fb263572aa40792e1356d528e7c80c74193819",
+      "bytes": 16777216
+    },
+    "chunks/autoencoder.pt.part004": {
+      "sha256": "ee1b6576ffa9cbed2f44bb6f84d6930033010bd2f931607b90ea5ced2f510769",
+      "bytes": 16777216
+    },
+    "chunks/autoencoder.pt.part005": {
+      "sha256": "cc9c5cbfbba4c897875545fcab838617ce004971200986075f7041dd15a09fdd",
+      "bytes": 157450
+    },
+    "chunks/coarse.pt.part000": {
+      "sha256": "da7f0fed5f1a151e907f1e22794c78af685b3cf1d3678e1ad908063166a9fe2e",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part001": {
+      "sha256": "ed177134d048d86e22ee6f199a2946f5ad2d4aaee5a15df91467b20b259d3432",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part002": {
+      "sha256": "77a7928f8ffe762426e5ab138732a5a14d98a124727e16b799552d5eb7ca3cc1",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part003": {
+      "sha256": "eef82fe3b18b18124bb25cfa584ef7c37f48c520862e6a69b81842c468491de9",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part004": {
+      "sha256": "39ee613d912998735201a9088e82ce0328e5f64974d073529fb2d1a7a831eb86",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part005": {
+      "sha256": "5e996dd745e3ad892376ce4e39ba192dbfa933fc29cf74157740aff862be354f",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part006": {
+      "sha256": "655790d13e56cb325a8b5c063edc3f23d7f9773c3af52b82f1500ddf2539f9fc",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part007": {
+      "sha256": "51c2a7d105857358b02c63e773c609e60e7e0b47f00599666e144714199f3096",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part008": {
+      "sha256": "efe6950684456a69fb61f063e2e5852558b8ce7c1135f39b9e547f875e1454ec",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part009": {
+      "sha256": "8c5421a93b089f18f3f79afc89b89e486afd4236e87dffe16b8ee02df8461fbb",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part010": {
+      "sha256": "5725353761f15d545250ffdbee7ab6e5bcc0ded98465352a79287a4ff0f78e35",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part011": {
+      "sha256": "ad90697f1fede6805fb0eaa20bd871d12cda01527363d681fd08e054422ecba9",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part012": {
+      "sha256": "3ccd84460575fa44bff9b3bf48b84a535fadd575fd26f3e16e58a50b6f1b32dc",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part013": {
+      "sha256": "aa8cc3e9d05b02e0bb23da65e3b7efed32c91e36e675a060394915909a66dedd",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part014": {
+      "sha256": "d8ac08b4660cf40c14061f2f2510237cd02c2cc4984dca5b782950d31469031a",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part015": {
+      "sha256": "95f56a266dfe42c59aaf6cd294b0c0797cdca308e6a48ef6940dd429ca18daf6",
+      "bytes": 16777216
+    },
+    "chunks/coarse.pt.part016": {
+      "sha256": "d03858cbb79c36b4f5658e79c5785837a1970bab3bd2038c83eaf68d2fc3b64d",
+      "bytes": 1204799
+    },
+    "chunks/diffusion.pt.part000": {
+      "sha256": "9825a0395b4333b76800992edec91ee508612159335d519767f3834bf69a044a",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part001": {
+      "sha256": "c68d2cbffd23a8345aa9f3bc917f9451698b9cfe3701cccea8e924047e37d1e6",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part002": {
+      "sha256": "8f68409b62cf38639cf5ccdde13a48eddd94aae2fc9d551e855b307dd6ea48ff",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part003": {
+      "sha256": "ff94b0f239c2387e3601eed36a13e6be2b11062cf8a066f3d2fb165553526001",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part004": {
+      "sha256": "e01dfdbaaf6ac640b2559a23aab11cbae1be0231053f7de23d265fcdce988da6",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part005": {
+      "sha256": "7a54de4d3780fd3e30866ec6ea69abde4ec636dabaf475be9eaa155bf7506247",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part006": {
+      "sha256": "19ea5526088984687d8103b897355ea5378ed1c20a7e7350257ff020bcf3f3be",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part007": {
+      "sha256": "29fa8d636763c033a49d35747d99fa3412fafb48dd227f773f09903f476197f7",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part008": {
+      "sha256": "a41ea70db9fd36b2fd1194209741941157daeb9b3518484415ac5662bc61a5d4",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part009": {
+      "sha256": "8f3d7aec69a7fa23780e1643df242e4cadfd731533ad33289c255b090e3c39a4",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part010": {
+      "sha256": "b908d596cc76e09db388031f2e7d5c319d65074962d4f95e5eb2aae3e88b2c1a",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part011": {
+      "sha256": "374923f546e457a78b4bff6e7f380ce84f8bc34e18c56b74fd673110ec9e1894",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part012": {
+      "sha256": "757e4e82ac008366ff18a57f1ce26014aba17b136e2c21af167d189618db3449",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part013": {
+      "sha256": "28ed9dd468192ca686ef3b71713330bdad91db641ab2a99d102e18f13828ac20",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part014": {
+      "sha256": "fd23ea29db6a5243b6d7da222a5832e59ccc7b6a8785c8f3558d00a88facdc7a",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part015": {
+      "sha256": "30e44fd405932781e231fac3bfae0cd027b737ec59b5a016d46a92dcfc9788f9",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part016": {
+      "sha256": "209c1f17a6f2dd273793cdf56559e5238007dba792a3024749298462c63b0712",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part017": {
+      "sha256": "3ef4c1187ba430af7f05078d47f4f2fddc220b4c8af2714429ada856340b41f9",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part018": {
+      "sha256": "3c38a76b770e7fdef7c4ae0118c6c422ea8b66138b830b01e95bd4965d6615e0",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part019": {
+      "sha256": "17e5f481b7bb475beb782d72e2d2da8025122080aa08bd9b0a79f00daba81727",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part020": {
+      "sha256": "bff78ce870260e0b0a7b471f2c908123c97383ebf20bca849620469bd0fd4ebe",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part021": {
+      "sha256": "3b83286b74a755db5a58388d2b3c73e08a698aae4a32218ceb2e1304dedfe72c",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part022": {
+      "sha256": "14d54fa9a4c40bb450729c27edd79d2fef3077b12f97a7ba6360330a66bb8111",
+      "bytes": 16777216
+    },
+    "chunks/diffusion.pt.part023": {
+      "sha256": "e984405f6dcfd5b2782cf09af7695375447464df0db2d81282c6aed3f647f9a5",
+      "bytes": 16348218
+    },
+    "projection_stats.json": {
+      "sha256": "2ff84e460c61c534ca2d7a645895cc2f92f049c9d2a8859f4656db71161b23a7",
+      "bytes": 555
+    },
+    "projector_calibration.json": {
+      "sha256": "2654ed7b351402bcdb77165f96896cb321dc873d562d1bac0050229480cbb28e",
+      "bytes": 1458
+    }
+  },
+  "assembly": {
+    "autoencoder.pt": [
+      "chunks/autoencoder.pt.part000",
+      "chunks/autoencoder.pt.part001",
+      "chunks/autoencoder.pt.part002",
+      "chunks/autoencoder.pt.part003",
+      "chunks/autoencoder.pt.part004",
+      "chunks/autoencoder.pt.part005"
+    ],
+    "coarse.pt": [
+      "chunks/coarse.pt.part000",
+      "chunks/coarse.pt.part001",
+      "chunks/coarse.pt.part002",
+      "chunks/coarse.pt.part003",
+      "chunks/coarse.pt.part004",
+      "chunks/coarse.pt.part005",
+      "chunks/coarse.pt.part006",
+      "chunks/coarse.pt.part007",
+      "chunks/coarse.pt.part008",
+      "chunks/coarse.pt.part009",
+      "chunks/coarse.pt.part010",
+      "chunks/coarse.pt.part011",
+      "chunks/coarse.pt.part012",
+      "chunks/coarse.pt.part013",
+      "chunks/coarse.pt.part014",
+      "chunks/coarse.pt.part015",
+      "chunks/coarse.pt.part016"
+    ],
+    "diffusion.pt": [
+      "chunks/diffusion.pt.part000",
+      "chunks/diffusion.pt.part001",
+      "chunks/diffusion.pt.part002",
+      "chunks/diffusion.pt.part003",
+      "chunks/diffusion.pt.part004",
+      "chunks/diffusion.pt.part005",
+      "chunks/diffusion.pt.part006",
+      "chunks/diffusion.pt.part007",
+      "chunks/diffusion.pt.part008",
+      "chunks/diffusion.pt.part009",
+      "chunks/diffusion.pt.part010",
+      "chunks/diffusion.pt.part011",
+      "chunks/diffusion.pt.part012",
+      "chunks/diffusion.pt.part013",
+      "chunks/diffusion.pt.part014",
+      "chunks/diffusion.pt.part015",
+      "chunks/diffusion.pt.part016",
+      "chunks/diffusion.pt.part017",
+      "chunks/diffusion.pt.part018",
+      "chunks/diffusion.pt.part019",
+      "chunks/diffusion.pt.part020",
+      "chunks/diffusion.pt.part021",
+      "chunks/diffusion.pt.part022",
+      "chunks/diffusion.pt.part023"
+    ]
+  },
+  "transport": "16 MiB binary chunks, concatenated byte-for-byte; original PyTorch checkpoint SHA256 preserved"
+}

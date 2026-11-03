@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "upath-x2ct"
+version = "1.0.0"
+description = "Geometry-aware biplanar chest CT reconstruction with residual latent diffusion"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.5,<2.6", "torchvision>=0.20,<0.21", "monai==1.5.2", "monai-generative==0.2.3", "numpy<2", "scipy", "scikit-image", "nibabel", "pydicom", "h5py", "matplotlib", "einops", "pillow", "pyyaml", "diffdrr==0.6.1", "SimpleITK"]
+[project.optional-dependencies]
+download = ["huggingface_hub"]
+dev = ["pytest"]
+[tool.setuptools]
+package-dir = {"" = "src"}
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

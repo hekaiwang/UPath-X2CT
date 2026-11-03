@@ -1,0 +1,15 @@
+{
+  "aggregation": "patient means; repeated series averaged within patient first",
+  "source": "Frozen final B0 K8/S50 and five full-cohort baseline evaluations",
+  "metrics": "PSNR: 2524 HU range; SSIM: orthogonal slice mean, stored as fraction; MAE: HU",
+  "baseline_notes": [
+    "BX2S and XraySyn are project HU adapters.",
+    "XraySyn is AP-only.",
+    "DVG-Diffusion is the project v1.4 decoder-unfrozen retraining."
+  ],
+  "source_sha256": {
+    "lidc_per_case.csv": "17bd3081b0436e76bb209b43c4e28541ee7b1461961443612dfec139847d68e1",
+    "msd_per_case.csv": "d1aa4a06c29b00a8cec571c168acc3ce9c8a59326b7644e4463dabc21f9fb6d4",
+    "ctrate_per_case.csv": "a504fc953a4ee9e62c8b2d1c1186778069251633acf4b6eec211c4907a60a1a2"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "scope": "One raw-source case per dataset; compared with historical prepared arrays",
+  "checks": {
+    "lidc": {
+      "ct": {
+        "shape": [
+          128,
+          128,
+          128
+        ],
+        "mean_abs_difference": 0.0
+      },
+      "drr_frontal_ap": {
+        "shape": [
+          512,
+          512
+        ],
+        "mean_abs_difference": 0.0
+      },
+      "drr_left_lateral": {
+        "shape": [
+          512,
+          512
+        ],
+        "mean_abs_difference": 0.0
+      },
+      "projection_matrices": {
+        "shape": [
+          2,
+          3,
+          4
+        ],
+        "mean_abs_difference": 0.0
+      }
+    },
+    "msd": {
+      "ct": {
+        "shape": [
+          128,
+          128,
+          128
+        ],
+        "mean_abs_difference": 0.0
+      },
+      "drr_frontal_ap": {
+        "shape": [
+          512,
+          512
+        ],
+        "mean_abs_difference": 0.0
+      },
+      "drr_left_lateral": {
+        "shape": [
+          512,
+          512
+        ],
+        "mean_abs_difference": 0.0
+      },
+      "projection_matrices": {
+        "shape": [
+          2,
+          3,
+          4
+        ],
+        "mean_abs_difference": 0.0
+      }
+    },
+    "ctrate": {
+      "ct": {
+        "shape": [
+          128,
+          128,
+          128
+        ],
+        "mean_abs_difference": 0.0
+      },
+      "drr_frontal_ap": {
+        "shape": [
+          512,
+          512
+        ],
+        "mean_abs_difference": 0.0
+      },
+      "drr_left_lateral": {
+        "shape": [
+          512,
+          512
+        ],
+        "mean_abs_difference": 0.0
+      },
+      "projection_matrices": {
+        "shape": [
+          2,
+          3,
+          4
+        ],
+        "mean_abs_difference": 0.0
+      }
+    }
+  }
+}

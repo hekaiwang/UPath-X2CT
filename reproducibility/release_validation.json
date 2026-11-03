@@ -1,0 +1,24 @@
+{
+  "tests": {
+    "passed": 8,
+    "checks": [
+      "patient-disjoint fixed splits and counts",
+      "90 patient-aggregated paper metrics from case-level evidence",
+      "projection-only HDF5 and NPZ inputs",
+      "invalid camera matrix rejection",
+      "case-based sampling seeds",
+      "byte-exact idempotent checkpoint chunk assembly",
+      "corrupted chunk rejection without partial installation",
+      "incorrect chunk order rejection"
+    ]
+  },
+  "cli_help": {
+    "entrypoints": 18,
+    "failed": 0
+  },
+  "wheel_build": "passed",
+  "weight_packaging": "all EMA-resolved tensors exactly equal after save/reload",
+  "release_scope": "main UPath-X2CT source, exact three-cohort splits, five baseline results, deployment weights; no experimental variants or patient images",
+  "historical_replay": "same-runtime public output equals original source/checkpoint output exactly; historical saved prediction drift is measured separately",
+  "chunk_reassembly": "All three real checkpoints reconstructed and full-file SHA256 verified"
+}

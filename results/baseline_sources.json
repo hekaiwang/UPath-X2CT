@@ -1,0 +1,37 @@
+[
+  {
+    "id": "x2ct_gan",
+    "views": 2,
+    "upstream": "https://github.com/kylekma/X2CT.git",
+    "revision": "a9f0473ee2b8acfc2abcc9acd7d7cf50435435e3",
+    "license": "LGPL-3.0 file; upstream README says GPLv3"
+  },
+  {
+    "id": "perx2ct",
+    "views": 2,
+    "upstream": "https://github.com/dek924/PerX2CT.git",
+    "revision": "7a1292b1ef896ffffd4900b7231feebcfd87b23b",
+    "license": "NOASSERTION"
+  },
+  {
+    "id": "bx2s_net_hu_adapter",
+    "views": 2,
+    "upstream": "https://github.com/NBU-CVMI/bx2s-net",
+    "revision": "e45b2ad8dcba5fd4a883bb255fa061bbb8b51f06",
+    "license": "NOASSERTION; no license file in the audited checkout"
+  },
+  {
+    "id": "xraysyn_hu_adapter",
+    "views": 1,
+    "upstream": "https://github.com/cpeng93/XraySyn",
+    "revision": "7309b2fbc28bceddbc80a03c2279540da391782a",
+    "license": "MIT"
+  },
+  {
+    "id": "dvg_diffusion",
+    "views": 2,
+    "upstream": "https://github.com/xiexing0916/DVG-Diffusion.git",
+    "revision": "46d32ee0542199a6c845e93e50ed04945650b6fc",
+    "license": "NOASSERTION"
+  }
+]

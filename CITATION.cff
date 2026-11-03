@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying UPath-X2CT manuscript when using this software."
+title: "UPath-X2CT: Geometry-Aware Biplanar Chest CT Reconstruction with Residual Latent Diffusion"
+type: software
+authors:
+  - family-names: Wang
+    given-names: Hekai
+repository-code: "https://github.com/hekaiwang/UPath-X2CT"
+license: Apache-2.0
+version: 1.0.0

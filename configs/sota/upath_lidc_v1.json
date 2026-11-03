@@ -1,0 +1,142 @@
+{
+  "protocol_id": "UPATH-LIDC-v1.0",
+  "random_seed": 20260724,
+  "canonical_volume": {
+    "coordinate_system": "DICOM LPS",
+    "array_order": "ZYX",
+    "full_shape": [
+      256,
+      256,
+      256
+    ],
+    "full_spacing_mm": [
+      1.5,
+      1.5,
+      1.5
+    ],
+    "full_fov_mm": [
+      384.0,
+      384.0,
+      384.0
+    ],
+    "global_shape": [
+      128,
+      128,
+      128
+    ],
+    "global_spacing_mm": [
+      3.0,
+      3.0,
+      3.0
+    ],
+    "hu_clip": [
+      -1024,
+      1500
+    ],
+    "outside_fill_hu": -1024,
+    "crop": "thorax-centered and lesion-independent"
+  },
+  "projection": {
+    "primary_views": [
+      "frontal_ap",
+      "left_lateral"
+    ],
+    "world_coordinate_system": "DICOM LPS",
+    "detector_shape": [
+      512,
+      512
+    ],
+    "intensity_domain": "negative_log_attenuation",
+    "geometry_representation": "explicit 3x4 projection matrix per view",
+    "renderer": "differentiable cone-beam DRR",
+    "nominal_geometry": {
+      "source_detector_distance_mm": 1800.0,
+      "source_object_distance_mm": 1500.0,
+      "detector_pixel_size_uv_mm": [
+        0.9,
+        0.9
+      ],
+      "principal_point_uv_px": [
+        256.0,
+        256.0
+      ],
+      "isocenter_fov_uv_mm": [
+        384.0,
+        384.0
+      ],
+      "frontal_ap_lps": {
+        "source_mm": [
+          0.0,
+          -1500.0,
+          0.0
+        ],
+        "detector_center_mm": [
+          0.0,
+          300.0,
+          0.0
+        ],
+        "detector_u_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "detector_v_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      },
+      "left_lateral_lps": {
+        "source_mm": [
+          -1500.0,
+          0.0,
+          0.0
+        ],
+        "detector_center_mm": [
+          300.0,
+          0.0,
+          0.0
+        ],
+        "detector_u_axis": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "detector_v_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      }
+    },
+    "diffdrr_adapter": {
+      "version": "0.6.1",
+      "internal_coordinate_system": "NIfTI RAS+",
+      "lps_to_ras_diagonal": [
+        -1.0,
+        -1.0,
+        1.0
+      ],
+      "subject_orientation": "AP",
+      "reverse_x_axis": true,
+      "parameterization": "euler_angles",
+      "convention": "ZXY",
+      "translation_xyz_mm": [
+        0.0,
+        1500.0,
+        0.0
+      ],
+      "frontal_ap_rotation_zxy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "left_lateral_rotation_zxy_rad": [
+        -1.5707963267948966,
+        0.0,
+        0.0
+      ]
+    },
+    "training_geometry_augmentation": "locked_after_G0_phantom_and_landmark_audit"
+  }
+}

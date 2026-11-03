@@ -1,0 +1,44 @@
+{
+  "lidc": {
+    "train": {
+      "patients": 817,
+      "volumes": 824
+    },
+    "val": {
+      "patients": 91,
+      "volumes": 91
+    },
+    "test": {
+      "patients": 102,
+      "volumes": 103
+    }
+  },
+  "msd": {
+    "train": {
+      "patients": 0,
+      "volumes": 0
+    },
+    "val": {
+      "patients": 0,
+      "volumes": 0
+    },
+    "test": {
+      "patients": 63,
+      "volumes": 63
+    }
+  },
+  "ctrate": {
+    "train": {
+      "patients": 0,
+      "volumes": 0
+    },
+    "val": {
+      "patients": 0,
+      "volumes": 0
+    },
+    "test": {
+      "patients": 425,
+      "volumes": 425
+    }
+  }
+}

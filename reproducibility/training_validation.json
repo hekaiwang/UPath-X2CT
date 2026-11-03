@@ -1,0 +1,47 @@
+{
+  "scope": "One real training case and one validation case; one optimizer update per stage, not a full retraining",
+  "device": "NVIDIA A800 GPU 4",
+  "checks": {
+    "autoencoder": {
+      "exit_code": 0,
+      "seconds": 25.0,
+      "latest_checkpoint": true,
+      "best_checkpoint": true
+    },
+    "coarse": {
+      "exit_code": 0,
+      "seconds": 31.93,
+      "latest_checkpoint": true,
+      "best_checkpoint": true
+    },
+    "diffusion": {
+      "exit_code": 0,
+      "seconds": 25.8,
+      "latest_checkpoint": true,
+      "best_checkpoint": true
+    },
+    "latent_cache": {
+      "exit_code": 0,
+      "seconds": 7.37
+    },
+    "latent_finalize": {
+      "exit_code": 0,
+      "seconds": 2.76
+    },
+    "condition_cache": {
+      "exit_code": 0,
+      "seconds": 5.11
+    },
+    "condition_finalize": {
+      "exit_code": 0,
+      "seconds": 1.79
+    }
+  },
+  "export_and_inference": {
+    "export_exit_code": 0,
+    "predict_exit_code": 0,
+    "samples": 1,
+    "steps": 2,
+    "note": "Smoke-trained checkpoint bundle loaded by public Predictor; verifies training-to-inference file compatibility, not reconstruction quality."
+  }
+}

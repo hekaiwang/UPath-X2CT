@@ -1,0 +1,39 @@
+{
+  "case_id": "lidc_0003_4bce0db858",
+  "device": "NVIDIA A800 80GB",
+  "precision": "bf16",
+  "samples": 8,
+  "steps": 50,
+  "finite": true,
+  "shape": [
+    128,
+    128,
+    128
+  ],
+  "reference_mean_abs_difference_hu": 13.62371826171875,
+  "reference_max_abs_difference_hu": 443.71038818359375,
+  "metrics": {
+    "mae_hu": 69.3102798461914,
+    "rmse_hu": 152.1583709716797,
+    "bias_hu": -16.56146240234375,
+    "psnr_3d": 24.39587201268846,
+    "mae_hu_body": 105.84854888916016,
+    "mae_hu_lung": 118.48323822021484,
+    "psnr_2d_axial": 26.70815683868286,
+    "ssim_2d_axial": 0.7357946288241141,
+    "psnr_2d_coronal": 27.95153122358265,
+    "ssim_2d_coronal": 0.7516313160501265,
+    "psnr_2d_sagittal": 24.716451227501327,
+    "ssim_2d_sagittal": 0.7390611943636374,
+    "psnr_2d_orthogonal_mean": 26.458713096588948,
+    "ssim_2d_orthogonal_mean": 0.7421623797459592,
+    "gradient_energy_ratio": 0.7407385642505484
+  },
+  "scope": "One real LIDC case; full-cohort results are historical, not rerun during release.",
+  "original_code_and_original_checkpoint_replay": {
+    "mean_abs_difference_hu": 0.0,
+    "max_abs_difference_hu": 0.0,
+    "equal_voxelwise": true
+  },
+  "historical_replay_note": "Historical saved predictions differ from both current original-code replay and public-code replay. The cause of historical drift is not established. Public packaging introduces no difference in the same-runtime comparison."
+}

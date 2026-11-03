@@ -1,0 +1,48 @@
+{
+  "case_count": 64,
+  "checks": {
+    "both_views_normalized_rmse_at_most_0_20": true,
+    "both_views_pearson_at_least_0_98": true,
+    "positive_gain": true,
+    "train_only": true
+  },
+  "definition_split": "train",
+  "detector_shape": [
+    128,
+    128
+  ],
+  "gate": "P1-projector-calibration",
+  "protocol_id": "UPATH-LIDC-v1.0",
+  "provenance": {
+    "script_sha256": "649f8e7b2fdc16d84402e600f1be87aa2bdf40c3e785300d864f40b0420771d0",
+    "training_pack_manifest_sha256": "2fb77992a3a35b4955b7d6b4cae1d2f1ff728931c8e2eb18b17a84988e1b5dad",
+    "training_pack_summary_sha256": "089fe0fec252589781aaf81d8823ea3a67f272d1d78568e66248352de61e2753"
+  },
+  "ray_samples": 128,
+  "selection_seed": 20260724,
+  "status": "pass",
+  "views": {
+    "frontal_ap": {
+      "bias": -1.5575316467554714,
+      "gain": 0.34161568803254666,
+      "normalized_rmse": 0.11570839439332996,
+      "pearson": 0.993283226208372,
+      "samples": 1048576,
+      "target_log1p_mean": 3.037953683423542,
+      "target_log1p_std": 1.6762189638949145,
+      "target_max": 132.9453125,
+      "target_min": 0.0
+    },
+    "left_lateral": {
+      "bias": -1.9400372493695215,
+      "gain": 0.3439237007431723,
+      "normalized_rmse": 0.09794049642514308,
+      "pearson": 0.9951922724579416,
+      "samples": 1048576,
+      "target_log1p_mean": 2.6043926183751345,
+      "target_log1p_std": 1.9973405768961823,
+      "target_max": 173.015625,
+      "target_min": 0.0
+    }
+  }
+}
