@@ -9,7 +9,7 @@ from upathx2ct.inference import Predictor
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--weights', type=Path, required=True)
+    p.add_argument('--weights', type=Path, required=True, help='upath_x2ct_final.pt or its containing directory')
     p.add_argument('--input', type=Path, required=True)
     p.add_argument('--case-id', required=True, help='Used for deterministic per-case sampling')
     p.add_argument('--output', type=Path, required=True)

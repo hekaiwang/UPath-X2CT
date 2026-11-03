@@ -1,13 +1,18 @@
 # Inference contract
 
-The inference bundle contains `autoencoder.pt`, `coarse.pt`, `diffusion.pt` and
-`projection_stats.json`. EMA values are materialized as ordinary model weights;
-the normalized autoencoder and diffusion residual scales are preserved. No
-optimizer, local paths, training examples or ground-truth volumes are packaged.
+The released model is one file, `upath_x2ct_final.pt`. It contains the
+normalized autoencoder, coarse conditioning network, residual diffusion,
+training-only projection normalization, CT-to-HU scale/offset, and projector
+calibration. EMA values are materialized as ordinary state dictionaries;
+autoencoder latent statistics and diffusion residual scales remain in their
+model buffers. No optimizer, training examples or ground-truth volumes are packaged.
 
-The released pairing is the frozen normalized autoencoder, coarse `best.pt`
-(step 20,000), and diffusion `best_step22000_snapshot.pt`. Checksums and exact
-file sizes are recorded in `configs/weights.json`.
+The selected diffusion checkpoint is step 22,000, paired with the original
+frozen autoencoder and step-20,000 coarse component. These are internal components
+of one final model; there is no separately released coarse checkpoint or standalone
+coarse result table in the current release. `configs/weights.json` records the
+final-file checksum and source provenance. The predictor accepts the `.pt` path
+or a directory containing it and loads it directly without extracting component files.
 
 ## Projection inputs
 
@@ -44,8 +49,8 @@ Published aggregate metrics use the historical predictions. See
 the scope of the release check; BF16 output is not promised bitwise identical
 across hardware/software stacks.
 
-The Hub stores large checkpoint files as 16-MiB binary transport chunks. The
-download script fetches the pinned revision, verifies every chunk, concatenates
-them, and verifies the original full-file SHA256 before atomic installation.
-Prediction uses the restored ordinary `.pt` files; chunking changes no tensors.
-Allow about 1.6 GB of free disk space while chunks and assembled weights coexist.
+The Hub provides the single final checkpoint. The download script fetches the
+pinned revision and verifies its SHA256 before use. Combining the components
+changes their storage layout only; it does not alter precision or resolve
+historical replay differences. See `reproducibility/final_bundle_validation.json`
+for the comparison against the previous three-file inference layout.

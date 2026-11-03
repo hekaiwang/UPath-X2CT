@@ -40,7 +40,7 @@ not guaranteed. Cache scripts have their own `--resume` switch.
 The public Hugging Face bundle is for inference or weight initialization and
 does not contain optimizer state for continuing the historical run. A fresh
 training run produces its own resumable checkpoints and finishes by exporting
-`runs/main/weights`, directly usable by `predict.py`.
+`runs/main/weights/upath_x2ct_final.pt`, directly usable by `predict.py`.
 
 ## Evaluation
 
@@ -66,3 +66,24 @@ small-sample functional checks, not evidence of convergence from retraining.
 Raw-source preprocessing was replayed for one case from each of LIDC-IDRI, MSD
 Lung and CT-RATE. Prepared CT, both DRRs and camera matrices matched the historical
 arrays exactly in all three checks; see `../reproducibility/preprocessing_validation.json`.
+
+## Numerical replay limitations
+
+Standalone coarse metrics are excluded from the public result tables. They
+could not be reconciled with the locally available replay; some paper results
+were produced on other servers. The author reports numerical precision as a
+reproduction issue. Release checks have not isolated the cause, and do not treat
+this server's values as replacements for results from those other runs.
+
+The single final checkpoint still contains the coarse conditioning parameters
+required by diffusion inference. Combining components does not change their
+precision, improve reconstruction, or establish reproduction of the paper's
+historical predictions. Final-model tables continue to report the original
+historical evaluation. A measured final-model replay difference is retained in
+`reproducibility/inference_validation.json`.
+
+`reproducibility/final_bundle_validation.json` compares the single-file model
+against the previous three-file model in the same runtime, including exact
+parameter/dtype equality and a complete K=8, 50-step prediction. This checks the
+packaging change only. Previous release validation records describe the earlier
+layout where explicitly stated.

@@ -1,19 +1,19 @@
 """Paper inference from calibrated projections; no target CT is required."""
 from dataclasses import fields
 import hashlib
-import json
 from pathlib import Path
 
 import h5py
 import numpy as np
 import torch
 
-from upathx2ct.b0.autoencoder import load_autoencoder_checkpoint
+from upathx2ct.b0.autoencoder import autoencoder_from_checkpoint
+from upathx2ct.checkpoint import load_final_checkpoint
 from upathx2ct.b0.diffusion import DiffusionConfig, ResidualLatentDiffusion
 from upathx2ct.b0.ema import resolve_checkpoint_model_state
 from upathx2ct.b0.training import autocast_context
 from upathx2ct.sota.data import normalize_drr
-from upathx2ct.sota.model import load_b0_coarse_checkpoint
+from upathx2ct.sota.model import coarse_from_checkpoint
 
 
 def stable_seed(base_seed, case_id, sample_index):
@@ -21,8 +21,7 @@ def stable_seed(base_seed, case_id, sample_index):
     return int.from_bytes(digest[:8], 'little') % (2**63 - 1)
 
 
-def load_diffusion(path, device):
-    checkpoint = torch.load(path, map_location='cpu', weights_only=True)
+def diffusion_from_checkpoint(checkpoint, device):
     allowed = {f.name for f in fields(DiffusionConfig)}
     cfg = {k: v for k, v in checkpoint['diffusion_config'].items() if k in allowed}
     for key in ['model_channels', 'num_res_blocks', 'attention_levels']:
@@ -52,17 +51,18 @@ def read_projections(path):
 
 class Predictor:
     def __init__(self, weights, device='cuda', precision='bf16'):
-        weights = Path(weights)
+        checkpoint = load_final_checkpoint(weights)
         self.device = torch.device(device)
         self.precision = precision
         if self.device.type == 'cpu' and precision != 'fp32':
             raise ValueError('Use --precision fp32 for CPU inference')
-        self.stats = json.loads((weights / 'projection_stats.json').read_text())
-        if self.stats['definition_split'] != 'train':
-            raise ValueError('Normalization must be fitted on train only')
-        self.autoencoder = load_autoencoder_checkpoint(str(weights / 'autoencoder.pt'), 'cpu').to(self.device).eval().requires_grad_(False)
-        self.coarse = load_b0_coarse_checkpoint(weights / 'coarse.pt', self.device).eval().requires_grad_(False)
-        self.diffusion = load_diffusion(weights / 'diffusion.pt', self.device)
+        self.stats = checkpoint['normalization']['projection_stats']
+        self.hu_scale = checkpoint['normalization']['ct_hu_scale']
+        self.hu_offset = checkpoint['normalization']['ct_hu_offset']
+        components = checkpoint['components']
+        self.autoencoder = autoencoder_from_checkpoint(components['autoencoder']).to(self.device).eval().requires_grad_(False)
+        self.coarse = coarse_from_checkpoint(components['coarse'], self.device).eval().requires_grad_(False)
+        self.diffusion = diffusion_from_checkpoint(components['diffusion'], self.device)
 
     @torch.inference_mode()
     def predict(self, path, case_id, samples=8, steps=50, seed=20260724):
@@ -83,8 +83,8 @@ class Predictor:
                 latent = self.diffusion.sample(coarse['coarse_latent'], coarse['condition'], steps=steps, eta=0., generator=generator)
                 decoded.append(self.autoencoder.decode(latent, normalized=True, clamp=True).float())
             stack = torch.stack(decoded)
-            mean = stack.mean(0)[0, 0].cpu().numpy() * 1262. + 238.
-            std = stack.std(0, unbiased=False)[0, 0].cpu().numpy() * 1262.
+            mean = stack.mean(0)[0, 0].cpu().numpy() * self.hu_scale + self.hu_offset
+            std = stack.std(0, unbiased=False)[0, 0].cpu().numpy() * self.hu_scale
         if not np.isfinite(mean).all() or not np.isfinite(std).all():
             raise RuntimeError('Non-finite reconstruction')
         return mean, std

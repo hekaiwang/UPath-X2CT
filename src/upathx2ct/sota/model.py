@@ -213,6 +213,12 @@ def load_b0_coarse_checkpoint(
     device: torch.device | str = "cpu",
 ) -> B0CoarseReconstructor:
     checkpoint = torch.load(path, map_location="cpu")
+    return coarse_from_checkpoint(checkpoint, device)
+
+
+def coarse_from_checkpoint(
+    checkpoint: Mapping[str, Any], device: torch.device | str = "cpu"
+) -> B0CoarseReconstructor:
     config = b0_config_from_mapping(checkpoint["b0_config"])
     model = B0CoarseReconstructor(config)
     model.load_state_dict(

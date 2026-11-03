@@ -76,12 +76,18 @@ python -m pytest -q
 ```bash
 python scripts/download_weights.py --output weights
 CUDA_VISIBLE_DEVICES=0 python scripts/predict.py \
-  --weights weights --input /path/to/projections.npz \
+  --weights weights/upath_x2ct_final.pt --input /path/to/projections.npz \
   --case-id example --output runs/example
 ```
 
 The download is pinned to an immutable Hugging Face revision and verifies file
-SHA256. Input NPZ/HDF5 needs only `drr_frontal_ap` and `drr_left_lateral`
+SHA256. The only deployed checkpoint is `upath_x2ct_final.pt`, containing all
+three internal model components and normalization parameters. No separate coarse
+checkpoint or standalone coarse evaluation results are included in this release.
+Bundling does not fix historical numerical replay differences; see
+[reproducibility](docs/REPRODUCIBILITY.md#numerical-replay-limitations).
+
+Input NPZ/HDF5 needs only `drr_frontal_ap` and `drr_left_lateral`
 (512×512 raw DRRs), and `projection_matrices` (2×3×4, centered LPS geometry).
 No target CT or target mask is read during prediction. Output files are
 `ct_hu.nii.gz` and `std_hu.nii.gz`, on a centered 128³ grid with 3-mm spacing.

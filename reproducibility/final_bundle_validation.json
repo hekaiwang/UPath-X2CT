@@ -1,0 +1,49 @@
+{
+  "checkpoint": "upath_x2ct_final.pt",
+  "bytes": 755925678,
+  "sha256": "ceefc722d1e56fb698f7985f2dedf4620adb147b44bae4f8205e0890b3c3c18a",
+  "components": {
+    "autoencoder": {
+      "tensors": 132,
+      "equal_values_and_dtypes": true,
+      "equal_configuration": true
+    },
+    "coarse": {
+      "tensors": 357,
+      "equal_values_and_dtypes": true,
+      "equal_configuration": true
+    },
+    "diffusion": {
+      "tensors": 357,
+      "equal_values_and_dtypes": true,
+      "equal_configuration": true
+    }
+  },
+  "projection_normalization_equal": true,
+  "projector_calibration_equal": true,
+  "gpu": "NVIDIA A800 80GB PCIe",
+  "precision": "bf16",
+  "case_id": "lidc_0003_4bce0db858",
+  "samples": 8,
+  "steps": 50,
+  "seed": 20260724,
+  "mean_equal_voxelwise": true,
+  "std_equal_voxelwise": true,
+  "maximum_difference_hu": 0.0,
+  "finite": true,
+  "elapsed_seconds": 37.42423105239868,
+  "scope": "Same-runtime comparison of original three-file release and single final checkpoint. No claim that historical saved predictions or standalone coarse metrics have been reproduced.",
+  "isolated_single_file_cli": {
+    "passed": true,
+    "input": "projection-only NPZ",
+    "external_weight_or_normalization_files": false,
+    "samples": 1,
+    "steps": 2,
+    "output_shape": [
+      128,
+      128,
+      128
+    ],
+    "finite": true
+  }
+}

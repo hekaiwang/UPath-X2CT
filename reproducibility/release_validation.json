@@ -1,6 +1,6 @@
 {
   "tests": {
-    "passed": 8,
+    "passed": 13,
     "checks": [
       "patient-disjoint fixed splits and counts",
       "90 patient-aggregated paper metrics from case-level evidence",
@@ -9,16 +9,25 @@
       "case-based sampling seeds",
       "byte-exact idempotent checkpoint chunk assembly",
       "corrupted chunk rejection without partial installation",
-      "incorrect chunk order rejection"
+      "incorrect chunk order rejection",
+      "single-file export round trip without optimizer state",
+      "checkpoint format, required components and normalization validation"
     ]
   },
-  "cli_help": {
-    "entrypoints": 18,
-    "failed": 0
-  },
-  "wheel_build": "passed",
   "weight_packaging": "all EMA-resolved tensors exactly equal after save/reload",
   "release_scope": "main UPath-X2CT source, exact three-cohort splits, five baseline results, deployment weights; no experimental variants or patient images",
   "historical_replay": "same-runtime public output equals original source/checkpoint output exactly; historical saved prediction drift is measured separately",
-  "chunk_reassembly": "All three real checkpoints reconstructed and full-file SHA256 verified"
+  "previous_layout_validation": {
+    "cli_help": {
+      "entrypoints": 18,
+      "failed": 0
+    },
+    "wheel_build": "passed",
+    "chunk_reassembly": "All three real checkpoints reconstructed and full-file SHA256 verified"
+  },
+  "final_bundle_cli_help": {
+    "entrypoints": 5,
+    "failed": 0
+  },
+  "single_file_packaging": "846 tensors and configurations unchanged; K=8 / DDIM50 mean and std match the previous layout voxel-for-voxel; see final_bundle_validation.json"
 }

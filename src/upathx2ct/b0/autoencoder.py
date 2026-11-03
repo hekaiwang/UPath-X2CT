@@ -103,6 +103,10 @@ class HighFidelityAutoencoderKL(nn.Module):
 
 def load_autoencoder_checkpoint(path: str, device: torch.device | str = "cpu") -> HighFidelityAutoencoderKL:
     checkpoint = torch.load(path, map_location=device)
+    return autoencoder_from_checkpoint(checkpoint)
+
+
+def autoencoder_from_checkpoint(checkpoint: dict) -> HighFidelityAutoencoderKL:
     cfg = checkpoint.get("autoencoder_config", {})
     config = AutoencoderConfig(
         channels=tuple(cfg.get("channels", AutoencoderConfig.channels)),

@@ -45,7 +45,7 @@ def main():
         elif stage=='diffusion':
             run('sota_20_train_b0_diffusion_ddp.py','--dataset-root',data,'--latent-root',lat,'--coarse-cache-root',cond,'--autoencoder-checkpoint',lat/'autoencoder_frozen.pt','--projector-calibration',calibration,'--output-dir',diff,'--batch-size',a.batch_size,'--max-steps',50000,'--min-steps',50000,distributed=True)
         else:
-            run('export_weights.py','--autoencoder',lat/'autoencoder_frozen.pt','--coarse',coarse/'best.pt','--diffusion',diff/'best.pt','--projection-stats',data/'projection_stats.json','--output',out/'weights')
+            run('export_weights.py','--autoencoder',lat/'autoencoder_frozen.pt','--coarse',coarse/'best.pt','--diffusion',diff/'best.pt','--projection-stats',data/'projection_stats.json','--projector-calibration',calibration,'--output',out/'weights')
 
 if __name__ == '__main__':
     main()
